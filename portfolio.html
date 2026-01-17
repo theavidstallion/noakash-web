@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naokash | Our Work</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-dark text-white font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid px-4 px-md-5">
+            <a class="navbar-brand fw-bold text-uppercase" href="./index.html"
+                style="font-family: 'Outfit', sans-serif; letter-spacing: -0.05em; font-size: 1.5rem;">
+                <span style="color: #66FCF1;">Naokash</span><span class="text-white">.</span>
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="./contact.html" class="btn btn-outline-info rounded-0 font-weight-bold text-uppercase"
+                            style="border-color: #66FCF1; color: #66FCF1; font-size: 0.85rem; letter-spacing: 0.1em; padding: 0.5rem 1.5rem;">Get
+                            a Quote</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="pt-40 pb-20 text-center relative overflow-hidden">
+        <div
+            class="absolute top-0 transform -translate-x-1/2 left-1/2 w-[800px] h-[500px] bg-cyan/5 rounded-full blur-[100px] -z-10">
+        </div>
+        <div class="container px-6 fade-in-up">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Our Portfolio</h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto font-light">
+                A showcase of technical expertise, precision engineering, and innovative solutions.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="mb-16">
+        <div class="container px-6">
+            <div id="portfolio-filters" class="flex flex-wrap justify-center gap-4 fade-in-up">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid -->
+    <section class="pb-32">
+        <div class="container px-6">
+            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="project-modal"
+        class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-dark/90 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="glass w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl relative transform scale-95 transition-transform duration-300"
+            id="modal-content">
+            <button id="modal-close"
+                class="absolute top-4 right-4 text-gray-400 hover:text-white z-50 w-10 h-10 flex items-center justify-center bg-black/20 rounded-full transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div id="modal-body">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>

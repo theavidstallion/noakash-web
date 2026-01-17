@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naokash | Contact Us</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-dark text-white font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid px-4 px-md-5">
+            <a class="navbar-brand fw-bold text-uppercase" href="./index.html"
+                style="font-family: 'Outfit', sans-serif; letter-spacing: -0.05em; font-size: 1.5rem;">
+                <span style="color: #66FCF1;">Naokash</span><span class="text-white">.</span>
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="./contact.html" class="btn btn-outline-info rounded-0 font-weight-bold text-uppercase"
+                            style="border-color: #66FCF1; color: #66FCF1; font-size: 0.85rem; letter-spacing: 0.1em; padding: 0.5rem 1.5rem;">Get
+                            a Quote</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="pt-40 pb-20 text-center relative">
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan/5 rounded-full blur-[100px] -z-10"></div>
+        <div class="container px-6 fade-in-up">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Get In Touch</h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto font-light">
+                Have a project in mind? We'd love to hear about it.
+            </p>
+        </div>
+    </section>
+
+    <section class="pb-32">
+        <div class="container px-6">
+            <div class="grid lg:grid-cols-3 gap-16">
+
+                <!-- Contact Info -->
+                <div class="lg:col-span-1 space-y-8 fade-in-up">
+                    <div class="glass p-8 rounded-sm border border-white/5">
+                        <h3 class="text-xl font-bold text-white mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 rounded bg-dark flex items-center justify-center text-cyan mr-4 shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 uppercase font-bold tracking-widest mb-1">Email</p>
+                                    <a href="mailto:contact@naokash.com"
+                                        class="text-white hover:text-cyan transition-colors">contact@naokash.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 rounded bg-dark flex items-center justify-center text-cyan mr-4 shrink-0">
+                                    <i class="fa-brands fa-github"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 uppercase font-bold tracking-widest mb-1">GitHub</p>
+                                    <a href="#"
+                                        class="text-white hover:text-cyan transition-colors">github.com/noa-kash</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 rounded bg-dark flex items-center justify-center text-cyan mr-4 shrink-0">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 uppercase font-bold tracking-widest mb-1">LinkedIn
+                                    </p>
+                                    <a href="#" class="text-white hover:text-cyan transition-colors">Naokash
+                                        Engineering</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="lg:col-span-2 fade-in-up delay-100">
+                    <div class="glass p-8 md:p-12 rounded-sm border border-white/5">
+                        <form name="contact" method="POST" data-netlify="true" netlify>
+                            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                                <div>
+                                    <label
+                                        class="block text-gray-500 text-xs font-bold uppercase tracking-widest mb-2">Name</label>
+                                    <input type="text" name="name" required
+                                        class="w-full bg-dark border-b border-gray-700 text-white py-3 focus:outline-none focus:border-cyan transition-colors"
+                                        placeholder="Your Name">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-gray-500 text-xs font-bold uppercase tracking-widest mb-2">Email</label>
+                                    <input type="email" name="email" required
+                                        class="w-full bg-dark border-b border-gray-700 text-white py-3 focus:outline-none focus:border-cyan transition-colors"
+                                        placeholder="your@email.com">
+                                </div>
+                            </div>
+                            <div class="mb-8">
+                                <label
+                                    class="block text-gray-500 text-xs font-bold uppercase tracking-widest mb-2">Subject</label>
+                                <input type="text" name="subject" required
+                                    class="w-full bg-dark border-b border-gray-700 text-white py-3 focus:outline-none focus:border-cyan transition-colors"
+                                    placeholder="Project Inquiry: ...">
+                            </div>
+                            <div class="mb-8">
+                                <label
+                                    class="block text-gray-500 text-xs font-bold uppercase tracking-widest mb-2">Message</label>
+                                <textarea name="message" rows="6" required
+                                    class="w-full bg-dark border-b border-gray-700 text-white py-3 focus:outline-none focus:border-cyan transition-colors"
+                                    placeholder="Tell us about your project requirements..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary-custom w-full md:w-auto">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>

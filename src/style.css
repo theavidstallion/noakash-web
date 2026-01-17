@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-dark: #0B0C10;
+  --color-dark-light: #1F2833;
+  --color-cyan: #66FCF1;
+  --color-cyan-dim: #45A29E;
+}
+
+body {
+  @apply bg-dark text-white font-sans;
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(69, 162, 158, 0.05), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(102, 252, 241, 0.05), transparent 25%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-white font-heading font-bold;
+}
+
+/* Glassmorphism Classes */
+.glass {
+  @apply bg-dark-light/70 backdrop-blur-xl border border-white/5 shadow-2xl;
+}
+
+.glass-sm {
+  @apply bg-dark-light/40 backdrop-blur-md border border-white/5;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-cyan-dim/50 rounded-full hover:bg-cyan transition-colors;
+}
+
+/* Animations using AOS-like classes */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- OVERRIDES FOR #main-navbar (Strict Bootstrap + Custom Style) --- */
+
+#main-navbar {
+  background-color: rgba(11, 12, 16, 0.9);
+  /* Dark background */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* No top/side borders usually on full width fixed nav, but we can add if moved */
+  transition: all 0.3s ease;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  z-index: 1030;
+}
+
+#main-navbar.scrolled {
+  background-color: rgba(11, 12, 16, 0.95) !important;
+  border-bottom: 1px solid rgba(102, 252, 241, 0.3) !important;
+  padding: 1rem 2rem !important;
+}
+
+/* Force container visibility */
+#main-navbar .container-fluid {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* Force collapse visibility on desktop */
+@media (min-width: 992px) {
+  #main-navbar .navbar-collapse {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    justify-content: flex-end !important;
+  }
+}
+
+/* Force Nav Item Visibility */
+#main-navbar .navbar-nav {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 1.5rem !important;
+}
+
+/* Force Link Visibility & Color */
+#main-navbar .nav-link {
+  color: #ffffff !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  opacity: 1 !important;
+  padding: 0.5rem !important;
+  display: block !important;
+}
+
+#main-navbar .nav-link:hover,
+#main-navbar .nav-link.active {
+  color: #66FCF1 !important;
+}
+
+/* Button override */
+#main-navbar .btn-outline-info {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Mobile Menu Deep Fix (No Animation Stability) */
+@media (max-width: 991.98px) {
+
+  /* Navbar Container needs relative to hold the absolute menu */
+  #main-navbar .container-fluid {
+    position: relative !important;
+  }
+
+  /* The Collapse Menu */
+  #main-navbar .navbar-collapse {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+
+    /* BULLETPROOF BACKGROUND BOX */
+    background-color: #0b0c10 !important;
+    background-image: linear-gradient(180deg, rgba(11, 12, 16, 1) 0%, rgba(31, 40, 51, 1) 100%) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+
+    padding: 2rem 1.5rem !important;
+    border-top: 1px solid rgba(102, 252, 241, 0.3) !important;
+    border-bottom: 2px solid rgba(102, 252, 241, 0.3) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95) !important;
+
+    /* Height & Scroll Safety */
+    max-height: 85vh !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    opacity: 1 !important;
+    /* Force Opaque */
+    visibility: visible !important;
+    z-index: 99999 !important;
+
+    /* DISABLE TRANSITIONS for Stability */
+    transition: none !important;
+    display: none;
+  }
+
+  /* Override Bootstrap's inline styles and classes during toggle */
+  #main-navbar .navbar-collapse.show {
+    display: block !important;
+  }
+
+  #main-navbar .navbar-collapse.collapsing {
+    display: none !important;
+    /* Hide intermediate expanding state to prevent flicker/bugs */
+    transition: none !important;
+  }
+
+  /* Items Layout */
+  /* Items Layout - SWITCH TO BLOCK FOR SAFETY */
+  #main-navbar .navbar-nav {
+    display: block !important;
+    width: 100% !important;
+    padding-top: 1rem !important;
+    padding-bottom: 4rem !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Ensure List Items behave */
+  #main-navbar .nav-item {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 25px !important;
+    /* Clear spacing */
+    height: auto !important;
+    /* Prevent collapse */
+  }
+
+  /* Link tap targets & Color Safety with Z-Index */
+  #main-navbar .nav-link {
+    display: inline-block !important;
+    /* Inline-block allows padding to work while centering */
+    padding: 10px 15px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    font-size: 1.2rem !important;
+    /* Slightly larger */
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    position: relative !important;
+    z-index: 10001 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Button specific spacing */
+  #main-navbar .nav-item.ms-lg-3 {
+    margin-left: 0 !important;
+    margin-top: 50px !important;
+    /* Massive gap to force separation */
+    margin-bottom: 20px !important;
+    display: block !important;
+    /* Back to block container for button */
+    text-align: center !important;
+  }
+}
+
+/* Remove global collapsing overrides that might conflict */
+
+
+/* Custom Premium Buttons */
+/* Kept for body content usage */
+.btn-primary-custom {
+  @apply relative overflow-hidden bg-transparent text-cyan border border-cyan px-8 py-3 font-heading font-bold uppercase tracking-widest text-sm transition-all duration-300 hover:text-dark;
+  z-index: 1;
+  display: inline-block;
+}
+
+.btn-primary-custom:hover {
+  box-shadow: 0 0 20px rgba(102, 252, 241, 0.4);
+}
+
+.btn-primary-custom::before {
+  content: '';
+  @apply absolute inset-0 bg-cyan w-0 transition-all duration-300 ease-out;
+  z-index: -1;
+}
+
+.btn-primary-custom:hover::before {
+  @apply w-full;
+}
+
+.btn-secondary-custom {
+  @apply relative overflow-hidden bg-dark-light text-white border border-gray-700 px-8 py-3 font-heading font-bold uppercase tracking-widest text-sm transition-all duration-300 hover:border-cyan hover:text-cyan;
+}
+
+/* Utility Utilities */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan to-blue-500;
+}
